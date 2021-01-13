@@ -1,0 +1,60 @@
+SELECT
+    *
+FROM
+    t_security;
+
+SELECT
+    *
+FROM
+    t_depository;
+
+SELECT
+    *
+FROM
+    t_position;
+
+SELECT
+    *
+FROM
+    t_currency;
+
+SELECT
+    *
+FROM
+    t_positiontype;
+
+CREATE VIEW v1 AS
+    SELECT
+        p.position_id,
+        d.depo_id,
+        d.depo_ky,
+        p.position_type_id,
+        pt.position_type,
+        s.security_id,
+        s.description,
+        c.currency_id,
+        c.currency_ky
+    FROM
+        t_position     AS p
+        INNER JOIN
+        t_depository   AS d
+        ON p.depo_id = d.depo_id
+        INNER JOIN
+        t_security     AS s
+        ON s.security_id = p.security_id
+        INNER JOIN
+        t_currency     AS c
+        ON p.currency_id = c.currency_id
+        INNER JOIN 
+        t_positiontype AS pt
+        ON p.position_type_id = pt.position_type_id;
+
+
+SELECT
+    *
+FROM
+    v1;
+
+
+
+
