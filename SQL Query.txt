@@ -1,28 +1,3 @@
-SELECT
-    *
-FROM
-    t_security;
-
-SELECT
-    *
-FROM
-    t_depository;
-
-SELECT
-    *
-FROM
-    t_position;
-
-SELECT
-    *
-FROM
-    t_currency;
-
-SELECT
-    *
-FROM
-    t_positiontype;
-
 CREATE VIEW v1 AS
     SELECT
         p.position_id,
